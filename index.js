@@ -1,27 +1,21 @@
-var recipe = {
-  flour: "1 cup",
-  corn: "1 husk",
-  saltL: "2 tablespoons",
-  sugar: "half a cup",
+var recipes = {}
+
+function updateObjectWithKeyAndValue(object, key, value){
+  return Object.assign({}, object. {[key]: value})
 }
 
-function updateObjectWithKeyAndValue(recipe, ingredient, quantity){
-  recipe = [ingredient]: quantity
-  return Object.assign({}, ingredient, quantity)
+function destructivelyUpdateObjectWithKeyAndValue(object, key, value) {
+  object[key] = value
+  return object
 }
 
-const recipe = {vanilla: "1 teaspoon"}
+function deleteFromObjectByKey(object, key) {
+  const newObj = Object.assign({}, object)
+  delete newObj[key]
+  return newObj
+}
 
-var obj = {icing: "5 licks"}
-
-expect(updateObjectWithKeyAndValue(recipe, vanilla, "1 teaspoon")).toMatch({
-  vanilla: "1 teaspoon",
-  icing: "5 licks"
-})
-
-expect(obj).toMatch({
-  vanilla: "1 teaspoon",
-  icing: "5 licks"
-})
-
-function deleteFromObjectByKey(recipe, "icing")
+function destructivelyDeleteFromObjectByKey(object, key) {
+  delete object[key]
+  return object
+}
