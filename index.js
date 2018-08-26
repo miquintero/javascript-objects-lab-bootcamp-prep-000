@@ -11,3 +11,5 @@ function updateObjectWithKeyAndValue(recipe, ingredient, quantity){
 }
 
 const recipe = {vanilla: "1 teaspoon"}
+
+expect(updateObjectWithKeyAndValue(recipe, vanilla, "1 teaspoon"))
